@@ -55,7 +55,7 @@ def select(inputt):
         fig = px.pie(new_df, values='class', names='Launch Site', title='Total Success Launches by Site')
     else:
         new_df = spacex_df[spacex_df["Launch Site"] == inputt]["class"].value_counts().to_frame()
-        new_df["name"] = ["Failure", "Success"]
+        new_df["name"] = ["Success", "Failure"]
         fig = px.pie(new_df, values='class', names='name', title='Total Success Launches for ' + inputt)
     return fig
 
